@@ -56,10 +56,6 @@ router.put('/:id', (req, res) => {
         id: req.params.id,
       },
     });
-    if (!updateCat[0]) {
-      res.status(404).json({ message: 'No user with this id!' });
-      return;
-    }
     res.status(200).json(updateCat);
   } 
   catch (err) {
@@ -81,10 +77,10 @@ router.delete('/:id', (req, res) => {
       return;
     }
     res.status(200).json(deleted);
-  }
-  catch (err) {
-    res.status(500).json(err);
-  }
+    }
+    catch (err) {
+      res.status(500).json(err);
+    }
 });
 
 module.exports = router;
