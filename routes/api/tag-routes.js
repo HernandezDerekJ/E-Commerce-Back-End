@@ -49,7 +49,6 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    console.log(putTag);
     res.status(200).json(putTag);
   } 
   catch (err) {

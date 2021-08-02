@@ -24,6 +24,8 @@ router.get('/:id', async (req, res) => {
     const findCat = await Category.findByPk(req.params.id, {
       include: [{ model: Product }],
     });
+    console.log(findCat);
+
     if (!findCat) {
       res.status(404).json({ message: 'No user with this id!' });
       return;
